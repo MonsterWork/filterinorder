@@ -1,0 +1,13 @@
+9af4c15fdf0d71b029c7b1773559be17 *css/BackendOrders.css
+8247bf4923f8a2d5a48139eef80b2023 *js/BackendOrders.js
+a1751e1f10a3b96b05d0401c97e72008 *lib/.htaccess
+1f0e1deac13493a73bedc54e402dd665 *lib/actions/backend/shopFilterinorderPluginBackendInfosection.action.php
+99f6e483aafaa97ef5290000386eb24a *lib/actions/settings/shopFilterinorderPluginSettings.action.php
+94a14fe28d061aceb07910e12476b621 *lib/actions/settings/shopFilterinorderPluginSettingsSave.controller.php
+3e11c3466e4376de4b71110fe988ecee *lib/config/install.php
+ea3a54fa3a4f5f4e1f7f4342e50996b1 *lib/config/plugin.php
+1fe67dd51d89e0b473c7b279a1883ef1 *lib/shopFilterinorderPlugin.class.php
+a1751e1f10a3b96b05d0401c97e72008 *templates/.htaccess
+5d0ef86c15dbacd9947d79909c63eb26 *templates/actions/backend/BackendOrder.html
+4ec878bd8baf4217cac22a208f18ec06 *templates/actions/backend/BackendOrders.html
+3057b61ce0b6bd6b6c9832d9df66a1c0 *templates/actions/settings/Settings.html

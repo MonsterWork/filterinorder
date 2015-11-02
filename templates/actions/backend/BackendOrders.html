@@ -1,0 +1,91 @@
+<script src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.slider.min.js?{$wa->version(true)}"></script>
+<script>
+$(function() {
+    $( "#filterinorder_slider-range" ).slider({
+      range: true,
+      min: {$prices.min},
+      max: {$prices.max},
+      values: [ {$prices.min}, {$prices.max} ],
+      slide: function( event, ui ) {
+        $('[name="price_from"]').val(ui.values[ 0 ]);
+        $('[name="price_to"]').val(ui.values[ 1 ]);
+      },
+      change: function( event, ui ) {
+        $('[name="price_from"]').change();
+        $('[name="price_to"]').change();
+      }
+    });
+    
+    $('[name="price_from"]').val($( "#filterinorder_slider-range" ).slider( "values", 0 ));
+    $('[name="price_to"]').val($( "#filterinorder_slider-range" ).slider( "values", 1 ));
+});
+</script>
+<style>
+
+</style>
+<div class="block filter-wrap" xmlns="http://www.w3.org/1999/html">
+    <h5 class="heading active"><i class="icon16 darr"></i>Фильтр</h5>
+    <form>
+        <ul class="filter-list">
+            <li class="filter-items slider-wrap">
+                <div class="filter-head"><i class="icon16 rarr"></i><span class="name">Цена заказа ({$currency_html})</span></div>
+                <div class="filter-params not-padd">
+                    <label><input type="text" name="price_from"/></label> -
+                    <label><input type="text" name="price_to"/></label>
+                    <div id="filterinorder_slider-range"></div>
+                </div>
+            </li>
+            <li class="filter-items">
+                <div class="filter-head"><i class="icon16 rarr"></i><span class="name">Статус заказа</span></div>
+                <ul class="filter-params">
+                    {foreach $states as $key => $state}
+                        <li><label><input name="state_id[{$key}]" type="checkbox"/>
+                                <span style="{foreach $state.options.style as $k => $v}{$k}: {$v};{/foreach}">{$state.name}</span></label>
+                        </li>
+                    {/foreach}
+                </ul>
+            </li>
+            <li class="filter-items">
+                <div class="filter-head"><i class="icon16 rarr"></i><span class="name">Способ доставки</span></div>
+                <ul class="filter-params">
+                    {foreach $shippings as $s}
+                        <li><label><input name="params.shipping_id[{$s.id}]" type="checkbox"/>{$s.name}</label></li>
+                        {foreachelse}
+                        <li>Добавьте способы доставки в настройках магазина</li>
+                    {/foreach}
+                </ul>
+            </li>
+            <li class="filter-items">
+                <div class="filter-head"><i class="icon16 rarr"></i><span class="name">Способ оплаты</span></div>
+                <ul class="filter-params">
+                    {foreach $payments as $p}
+                        <li><label><input name="params.payment_id[{$p.id}]" type="checkbox"/>{$p.name}</label></li>
+                        {foreachelse}
+                        <li>Добавьте способы оплаты в настройках магазина</li>
+                    {/foreach}
+                </ul>
+            </li>
+            <li class="filter-items">
+                <div class="filter-head"><i class="icon16 rarr active"></i><span class="name">Дата изменения</span>
+                </div>
+                <div class="filter-params not-padd">
+                    <label><i class="icon16 calendar"></i><input type="text" name="update_datetime_from" id="filterinorder_from" class="calendar"/></label> -
+                    <label><i class="icon16 calendar"></i><input type="text" name="update_datetime_to" id="filterinorder_to" class="calendar "/></label>
+                </div>
+            </li>
+            <li class="{*submit-wrap *}cleafix">
+                <div style="display: none;">
+                    <a href="" class="filters_href"></a>
+                </div>
+                {*<div class="coll2">
+                    <a href="#/orders/all/" class="refresh-filter">Сбросить</a>
+                </div>*}
+            </li>
+        </ul>
+    </form>
+</div>
+
+<link type="text/css" rel="stylesheet" href="{$wa_url}wa-apps/shop/plugins/filterinorder/css/BackendOrders.css"/>
+<script type="text/javascript" src="{$wa_url}wa-apps/shop/plugins/filterinorder/js/BackendOrders.js"></script>
+
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

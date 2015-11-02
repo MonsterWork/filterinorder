@@ -1,0 +1,7 @@
+<script>
+$(function(){
+    var href = "{waRequest::get('hash')}";
+    var view = "{waRequest::get('view')}";
+    $('#s-order-title .back.order-list').attr('href', '#/orders/hash='+ encodeURIComponent(href) + '&view=' + view + '/');
+});
+</script>

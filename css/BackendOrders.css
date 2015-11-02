@@ -1,0 +1,18 @@
+    .ui-datepicker.ui-widget-content{ display:none; border:2px solid gray;  border-radius: 4px; }
+    .filter-list{ margin: 0; padding: 0;  padding-top: 10px; padding-bottom: 10px;}
+    .filter-list li{ list-style: none; position: relative; line-height: 16px; }
+    .filter-items{ margin-bottom: 8px; }
+    .filter-head{ display: block; color:#03c; cursor: pointer; }
+    .filter-head.active + .filter-params{ display: block; }
+    .filter-params li{ line-height: 22px;}
+    .filter-params{ display: none; padding-left: 20px; padding-top: 6px; line-height: 22px; }
+    .filter-params input[type='checkbox']{ margin-right: 3px; display: inline-block; vertical-align: top; margin-top: 4px;}
+    .filter-params input[type='text']{ max-width: 44%; text-align: center; height: 22px; background: transparent; border: 1px solid #ccc; font-size:12px; position: relative; z-index: 4; }
+    .filter-params.not-padd{ padding-left: 5px;}
+    .filter-params i.calendar{ margin-right: -20px; margin-top: 4px; opacity: 0.3; position: relative; z-index: 1; }
+    .submit-wrap{ text-align: center; padding-top: 10px; border-top: 1px solid #ccc; margin-top: 12px; }
+    .submit-wrap .refresh-filter{ text-decoration: underline; color: gray; }
+    .submit-wrap .coll2{ padding: 7px 0; }
+    
+    #filterinorder_slider-range { margin-left: 10px; width: 85%; margin-top: 14px; margin-bottom: 20px;}
+    #filterinorder_slider-range .ui-slider-handle { cursor: pointer; }
